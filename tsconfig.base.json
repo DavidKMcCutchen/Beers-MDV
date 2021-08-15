@@ -14,8 +14,15 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
+    "noImplicitAny": false,
+    "strictPropertyInitialization": false,
     "paths": {
-      "@beer/api-interfaces": ["libs/api-interfaces/src/index.ts"]
+      "@beer/api-interfaces": ["libs/api-interfaces/src/index.ts"],
+      "@beer/core-data": ["libs/core-data/src/index.ts"],
+      "@beer/core-state": ["libs/core-state/src/index.ts"],
+      "@beer/material": ["libs/material/src/index.ts"],
+      "@beer/theme": ["libs/theme/src/index.ts"],
+      "@beer/ui-login": ["libs/ui-login/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

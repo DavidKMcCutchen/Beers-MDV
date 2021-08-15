@@ -1,0 +1,22 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h1>Beers</h1>
+      </mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <mat-list>
+        <mat-list-item *ngFor="let beer of beers" data-test="beer-list-item" (click)="selected.emit(beer)">
+          <h3 matLine>{{beer.name}}</h3>
+          <p matLine>{{beer.style}}</p>
+          <p matLine>{{beer.description}}</p>
+          <p matLine>{{beer.rating}}/100</p>
+          
+  
+          <button mat-icon-button (click)="deleted.emit(beer); $event.stopImmediatePropagation()">
+            <mat-icon *ngIf="!readonly">delete</mat-icon>
+          </button>
+        </mat-list-item>
+      </mat-list>
+    </mat-card-content>
+  </mat-card>

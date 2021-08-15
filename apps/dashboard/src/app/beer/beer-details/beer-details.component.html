@@ -1,0 +1,78 @@
+<mat-card>
+    <mat-card-header>
+      <mat-card-title>
+        <h1>
+          <span *ngIf="currentBeer.id; else elseBlock">{{
+            originalTitle
+          }}</span>
+          <ng-template #elseBlock>Create a Beer</ng-template>
+        </h1>
+      </mat-card-title>
+    </mat-card-header>
+    <form
+      [formGroup]="form"
+      #formDirective="ngForm"
+      (ngSubmit)="save(formDirective)"
+    >
+      <mat-card-content>
+        <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+          <mat-label>Name</mat-label>
+          <input
+            matInput
+            placeholder="Name"
+            formControlName="name"
+            type="text"
+            name="name"
+          />
+        </mat-form-field>
+
+        
+
+        <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+            <mat-label>Style</mat-label>
+            <input
+              matInput
+              placeholder="Style"
+              formControlName="style"
+              type="text"
+              name="style"
+            />
+          </mat-form-field>
+  
+        <mat-form-field appearance="outline" class="full-width" floatLabel="always">
+          <mat-label>Description</mat-label>
+          <input
+            matInput
+            placeholder="Description"
+            formControlName="description"
+            type="text"
+            name="description"
+          />
+        </mat-form-field>
+
+        <section class="full-width">
+          <mat-label>
+            Rating:
+            {{ this.form.get('rating')?.value }} Out of 100 (Worst to Best)
+          </mat-label>
+
+          <mat-slider
+            class="full-width"
+            formControlName="rating"
+            min="0"
+            max="100"
+            thumbLabel
+            name="rating"
+          ></mat-slider>
+        </section>
+
+
+      </mat-card-content>
+      <mat-card-actions>
+        <button type="submit" mat-button color="primary">
+          {{ originalTitle ? 'Save' : 'Create' }}
+        </button>
+        <button type="button" mat-button (click)="cancel()">Cancel</button>
+      </mat-card-actions>
+    </form>
+  </mat-card>

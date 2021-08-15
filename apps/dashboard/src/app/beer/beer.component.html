@@ -1,0 +1,18 @@
+<div class="container">
+    <div class="col-50" layout="row" layout-align="center center">
+      <beer-beer-list
+        [beers]="allBeers$ | async"
+        (selected)="selectBeer($event)"
+        (deleted)="deleteBeer($event)"
+      ></beer-beer-list>
+    </div>
+    <div class="col-50" layout="row" layout-align="center center">
+      <beer-beer-details
+        [beer]="selectedBeer$ | async"
+        (saved)="saveBeer($event)"
+        (cancelled)="resetBeer()"
+        [form]="form"
+      ></beer-beer-details>
+    </div>
+  </div>
+  

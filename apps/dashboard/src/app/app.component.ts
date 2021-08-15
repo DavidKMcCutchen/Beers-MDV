@@ -1,6 +1,4 @@
 import { Component } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
-import { Message } from '@beer/api-interfaces';
 
 @Component({
   selector: 'beer-root',
@@ -8,6 +6,9 @@ import { Message } from '@beer/api-interfaces';
   styleUrls: ['./app.component.scss'],
 })
 export class AppComponent {
-  hello$ = this.http.get<Message>('/api/hello');
-  constructor(private http: HttpClient) {}
+  title= 'Beer';
+  links= [
+    {path: '', icon: 'home', title: 'Home'},
+    {path: 'beers', icon: 'view_list', title: 'Beers'}
+  ]
 }

@@ -1,0 +1,39 @@
+{
+  "beers": [
+    {
+      "id": 1,
+      "name": "Budweiser",
+      "style": "Pilsner",
+      "description": "Redneck Beer",
+      "rating": 59
+    },
+    {
+      "id": 2,
+      "name": "Big Wave",
+      "style": "Golden Ale",
+      "description": "Yummy",
+      "rating": 56
+    },
+    {
+      "id": 3,
+      "name": "Guinness",
+      "style": "Stout",
+      "description": "Delicious Creaminess",
+      "rating": 100
+    },
+    {
+      "id": 4,
+      "name": "Coronel Church Pilsen",
+      "style": "Pilsner",
+      "description": "Good by Brazilian Standards",
+      "rating": 69
+    },
+    {
+      "id": 5,
+      "name": "Gross",
+      "style": "Disgusting",
+      "description": "Yucky",
+      "rating": 1
+    }
+  ]
+}
